@@ -4,10 +4,10 @@ from api.models import Room
 # Create your models here.
 
 class SpotifyToken(models.Model):
-    user = models.CharField(unique=True, max_length=50)
+    user = models.CharField(unique=True, max_length=100)
     created_at = models.DateField(auto_now_add=True)
-    refresh_token = models.CharField(max_length=150)
-    access_token = models.CharField(max_length=150)
+    refresh_token = models.CharField(max_length=300)
+    access_token = models.CharField(max_length=300)
     expires_in = models.DateTimeField()
     token_type = models.CharField(max_length=50)
 
