@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(b%khp#uk6o2dak0gc@h&9-z00dv9=0!21v@v8abuh!#q#w5r('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.house-party-djrt.herokuapp.com', '127.0.0.1', 'localhost', '192.168.1.244', '0.0.0.0']
 
@@ -54,7 +54,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware', 
 ]
+
+# # Whitelist localhost:3000 because that's where frontend will be served
+
+# Option 1
+# Option 2
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'music_controller.urls'
 
@@ -125,9 +132,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+     os.path.join(BASE_DIR, 'frontend/static')
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 WHITENOISE_USE_FINDERS = True
