@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Button, Grid, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom"
 import CreateRoomPage from "./CreateRoomPage";
 import MusicPlayer from "./MusicPlayer";
+import QRCode from "qrcode.react";
 
 export default class Room extends Component {
     constructor(props){
@@ -152,7 +152,16 @@ export default class Room extends Component {
                     <Button variant="contained" color="secondary" onClick={this.leaveButtonPressed}>
                         Leave Room
                     </Button>   
-                </Grid>            
+                </Grid> 
+                <Grid item xs={12} align="center">
+                    <QRCode
+                        id={window.location.href}
+                        value={window.location.href}
+                        size={290}
+                        level={"H"}
+                        includeMargin={true}
+                    />
+                </Grid>                            
             </Grid>
         );
     }
