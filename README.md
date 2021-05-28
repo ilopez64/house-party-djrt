@@ -18,6 +18,6 @@ The live deployment of this project can be found here: https://house-party-djrt.
 * Data is collected on the currently playing song such as artist, length, and cover art
 * Permissions are requested to allow app to play/pause the current song and to skip to the next Sogn on their queue
 
-**Front-end: React **
+**Front-end: React**
 * Communicates with the back-end to display user room information
 * Calls the Spotify API to perform app features
